@@ -54,24 +54,30 @@ var generateBtn = document.querySelector("#generate");
 
 
 
-var n = passwordLength
+
 var numberOptions = ["1", "2", "3","4", "5", "6", "7", "8", "9", "0"];
 // var lowerOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", ]
 var lowerOptions = "abcdefghijklmnopqrstuvwxyz";
 
 
 function writePassword() {
-  let passwordLength = window.prompt("How many characters does your password need? It must be between 8 - 128 characters");
+  var passwordLength = window.prompt("How many characters does your password need? It must be between 8 - 128 characters");
   var numberCharacter = confirm("Do you want to include numbers?");
-  if(!numberCharacter) {
-    return
-  }
   var lowerCharacter = confirm("Do you want to include lower case charaters?");
-  if(!lowerCharacter) {
-    return;
-  }
 
-  var generatePassword = n*(Math.floor(Math.random() *numberOptions.length*lowerOptions.length))
+  
+//   if (lowerCharacter === true){
+//     var generatePassword = Math.floor(Math.random() *numberOptions.length*lowerOptions.length);
+//   }
+// else{
+//   var generatePassword = Math.floor(Math.random() *numberOptions.length);
+// }
+
+
+var generatePassword = "";
+while (generatePassword.length <passwordLength){
+  generatePassword += ((lowerOptions[Math.floor(Math.random () * lowerOptions.length)]) + numberOptions[Math.floor(Math.random() * numberOptions.length)]);
+}
 
   var password = generatePassword;
   var passwordText = document.querySelector("#password");
