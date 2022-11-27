@@ -46,16 +46,24 @@
 
 var generateBtn = document.querySelector("#generate");
 
-var numberOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var numberOptions = ["0123456789"];
 // var lowerOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", ]
 var lowerOptions = "abcdefghijklmnopqrstuvwxyz";
+var upperOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var specialOptions = "`~!@£$%^&*()_-+={[}]|\\\";:',<.>/?*-"
 
 function writePassword() {
   var passwordLength = window.prompt(
     "How many characters does your password need? It must be between 8 - 128 characters"
   );
-  var numberCharacter = confirm("Do you want to include numbers?");
   var lowerCharacter = confirm("Do you want to include lower case charaters?");
+  var numberCharacter = confirm("Do you want to include numbers?");
+  var upperCharacter = confirm("Do you want to include upper case charaters?");
+  var specialCharacter = confirm("Do you want to include special case charaters?");
+
+  // FIXME: this is not being used in my while statement
+  
+
 
   //   if (lowerCharacter === true){
   //     var generatePassword = Math.floor(Math.random() *numberOptions.length*lowerOptions.length);
@@ -63,13 +71,55 @@ function writePassword() {
   // else{
   //   var generatePassword = Math.floor(Math.random() *numberOptions.length);
   // }
-
+  if (lowerCharacter, numberCharacter,upperCharacter, specialCharacter ===true){
   var generatePassword = "";
   while (generatePassword.length < passwordLength) {
     generatePassword +=
-      lowerOptions[Math.floor(Math.random() * lowerOptions.length)] +
-      numberOptions[Math.floor(Math.random() * numberOptions.length)];
+      lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
+      numberOptions[Math.floor(Math.random() * numberOptions.length)]+
+      upperOptions[Math.floor(Math.random() * upperOptions.length)]+
+      specialOptions[Math.floor(Math.random() * specialOptions.length)];
   }
+  }
+  else if (specialCharacter===false + lowerCharacter, numberCharacter, upperCharacter===true){
+    var generatePassword = "";
+    while (generatePassword.length < passwordLength) {
+      generatePassword +=
+        lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
+        numberOptions[Math.floor(Math.random() * numberOptions.length)]+
+        upperOptions[Math.floor(Math.random() * upperOptions.length)];
+    }
+    }
+  else if (upperCharacter===false + lowerCharacter, numberCharacter, specialCharacter ===true){
+    var generatePassword = "";
+    while (generatePassword.length < passwordLength) {
+      generatePassword +=
+        lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
+        numberOptions[Math.floor(Math.random() * numberOptions.length)]+
+        specialOptions[Math.floor(Math.random() * specialOptions.length)];
+    }
+    }
+  else if (numberCharacter===false + lowerCharacter, upperCharacter, specialCharacter ===true){
+    var generatePassword = "";
+    while (generatePassword.length < passwordLength) {
+      generatePassword +=
+        lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
+        upperOptions[Math.floor(Math.random() * upperOptions.length)]+
+        specialOptions[Math.floor(Math.random() * specialOptions.length)];
+    }
+    }
+  else if (lowerCharacter===false + numberCharacter,upperCharacter, specialCharacter ===true){
+    var generatePassword = "";
+    while (generatePassword.length < passwordLength) {
+      generatePassword +=
+        numberOptions[Math.floor(Math.random() * numberOptions.length)]+
+        upperOptions[Math.floor(Math.random() * upperOptions.length)]+
+        specialOptions[Math.floor(Math.random() * specialOptions.length)];
+    }
+    }
+
+
+
 
   var password = generatePassword;
   var passwordText = document.querySelector("#password");
