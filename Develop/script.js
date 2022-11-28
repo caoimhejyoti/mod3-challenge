@@ -46,76 +46,68 @@
 
 var generateBtn = document.querySelector("#generate");
 
-var numberOptions = ["0123456789"];
-var lowerOptions = "abcdefghijklmnopqrstuvwxyz";
-var upperOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var specialOptions = "`~!@£$%^&*()_-+={[}]|\\\";:',<.>/?*-"
-
 function writePassword() {
-  var passwordLength = window.prompt(
-    "How many characters does your password need? It must be between 8 - 128 characters"
+
+  var numberOptions = "0123456789";
+  var lowerOptions = "abcdefghijklmnopqrstuvwxyz";
+  var upperOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var specialOptions = "`~!@£$%^&*()_-+={[}]|\\\";:',<.>/?*-"
+  
+  var passwordLength = window.prompt("How many characters does your password need? It must be between 8 - 128 characters"
   );
   var lowerCharacter = window.confirm("Do you want to include lower case charaters?");
   var numberCharacter = window.confirm("Do you want to include numbers?");
   var upperCharacter = window.confirm("Do you want to include upper case charaters?");
   var specialCharacter = window.confirm("Do you want to include special case charaters?");
-
-  // FIXME: this is not being used in my while statement
+  var generatePassword = lowerOptions + numberOptions + upperOptions + specialOptions;
   
+  while (password<passwordLength) {
+    password = password + generatePassword(Math.floor(Math.random() * generatePassword.length))
+  }
 
 
-  //   if (lowerCharacter === true){
-  //     var generatePassword = Math.floor(Math.random() *numberOptions.length*lowerOptions.length);
-  //   }
-  // else{
-  //   var generatePassword = Math.floor(Math.random() *numberOptions.length);
+  
+  // if (lowerCharacter == true && numberCharacter == true && upperCharacter == true && specialCharacter === true){
+  // while (generatePassword.length < passwordLength) {
+
+  //     lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
+  //     numberOptions[Math.floor(Math.random() * numberOptions.length)]+
+  //     upperOptions[Math.floor(Math.random() * upperOptions.length)]+
+  //     specialOptions[Math.floor(Math.random() * specialOptions.length)];
   // }
-  if (lowerCharacter, numberCharacter,upperCharacter, specialCharacter ===true){
-  var generatePassword = "";
-  while (generatePassword.length < passwordLength) {
-    generatePassword +=
-      lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
-      numberOptions[Math.floor(Math.random() * numberOptions.length)]+
-      upperOptions[Math.floor(Math.random() * upperOptions.length)]+
-      specialOptions[Math.floor(Math.random() * specialOptions.length)];
-  }
-  }
-  else if (specialCharacter===false + lowerCharacter, numberCharacter, upperCharacter===true){
-    var generatePassword = "";
-    while (generatePassword.length < passwordLength) {
-      generatePassword +=
-        lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
-        numberOptions[Math.floor(Math.random() * numberOptions.length)]+
-        upperOptions[Math.floor(Math.random() * upperOptions.length)];
-    }
-    }
-  else if (upperCharacter===false + lowerCharacter, numberCharacter, specialCharacter ===true){
-    var generatePassword = "";
-    while (generatePassword.length < passwordLength) {
-      generatePassword +=
-        lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
-        numberOptions[Math.floor(Math.random() * numberOptions.length)]+
-        specialOptions[Math.floor(Math.random() * specialOptions.length)];
-    }
-    }
-  else if (numberCharacter===false + lowerCharacter, upperCharacter, specialCharacter ===true){
-    var generatePassword = "";
-    while (generatePassword.length < passwordLength) {
-      generatePassword +=
-        lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
-        upperOptions[Math.floor(Math.random() * upperOptions.length)]+
-        specialOptions[Math.floor(Math.random() * specialOptions.length)];
-    }
-    }
-  else if (lowerCharacter===false + numberCharacter,upperCharacter, specialCharacter ===true){
-    var generatePassword = "";
-    while (generatePassword.length < passwordLength) {
-      generatePassword +=
-        numberOptions[Math.floor(Math.random() * numberOptions.length)]+
-        upperOptions[Math.floor(Math.random() * upperOptions.length)]+
-        specialOptions[Math.floor(Math.random() * specialOptions.length)];
-    }
-    }
+  // }
+  // else if (specialCharacter===false + lowerCharacter, numberCharacter, upperCharacter===true){
+  //   while (generatePassword.length < passwordLength) {
+  //     generatePassword +=
+  //       lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
+  //       numberOptions[Math.floor(Math.random() * numberOptions.length)]+
+  //       upperOptions[Math.floor(Math.random() * upperOptions.length)];
+  //   }
+  //   }
+  // else if (upperCharacter===false + lowerCharacter, numberCharacter, specialCharacter ===true){
+  //   while (generatePassword.length < passwordLength) {
+  //     generatePassword +=
+  //       lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
+  //       numberOptions[Math.floor(Math.random() * numberOptions.length)]+
+  //       specialOptions[Math.floor(Math.random() * specialOptions.length)];
+  //   }
+  //   }
+  // else if (numberCharacter===false + lowerCharacter, upperCharacter, specialCharacter ===true){
+  //   while (generatePassword.length < passwordLength) {
+  //     generatePassword +=
+  //       lowerOptions[Math.floor(Math.random() * lowerOptions.length)]+
+  //       upperOptions[Math.floor(Math.random() * upperOptions.length)]+
+  //       specialOptions[Math.floor(Math.random() * specialOptions.length)];
+  //   }
+  //   }
+  // else if (lowerCharacter===false + numberCharacter,upperCharacter, specialCharacter ===true){
+  //   while (generatePassword.length < passwordLength) {
+  //     generatePassword +=
+  //       numberOptions[Math.floor(Math.random() * numberOptions.length)]+
+  //       upperOptions[Math.floor(Math.random() * upperOptions.length)]+
+  //       specialOptions[Math.floor(Math.random() * specialOptions.length)];
+  //   }
+  //   }
 
 
 
