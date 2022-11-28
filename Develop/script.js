@@ -47,7 +47,6 @@
 var generateBtn = document.querySelector("#generate");
 
 var numberOptions = ["0123456789"];
-// var lowerOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", ]
 var lowerOptions = "abcdefghijklmnopqrstuvwxyz";
 var upperOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialOptions = "`~!@£$%^&*()_-+={[}]|\\\";:',<.>/?*-"
@@ -56,10 +55,10 @@ function writePassword() {
   var passwordLength = window.prompt(
     "How many characters does your password need? It must be between 8 - 128 characters"
   );
-  var lowerCharacter = confirm("Do you want to include lower case charaters?");
-  var numberCharacter = confirm("Do you want to include numbers?");
-  var upperCharacter = confirm("Do you want to include upper case charaters?");
-  var specialCharacter = confirm("Do you want to include special case charaters?");
+  var lowerCharacter = window.confirm("Do you want to include lower case charaters?");
+  var numberCharacter = window.confirm("Do you want to include numbers?");
+  var upperCharacter = window.confirm("Do you want to include upper case charaters?");
+  var specialCharacter = window.confirm("Do you want to include special case charaters?");
 
   // FIXME: this is not being used in my while statement
   
