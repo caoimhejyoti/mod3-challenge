@@ -55,6 +55,19 @@ function writePassword() {
   
   var passwordLength = window.prompt("How many characters does your password need? It must be between 8 - 128 characters"
   );
+  
+  function validateLength(){
+    if (passwordLength < 8 || passwordLength > 128) {
+        alert ("Your password must be between 8 - 128 characters")
+        return false; 
+    }
+  }
+
+  validateLength(); 
+
+  var passwordLength = window.prompt("How many characters does your password need? It must be between 8 - 128 characters"
+  );
+
   var lowerCharacter = window.confirm("Do you want to include lower case charaters?");
   var numberCharacter = window.confirm("Do you want to include numbers?");
   var upperCharacter = window.confirm("Do you want to include upper case charaters?");
@@ -64,6 +77,7 @@ function writePassword() {
   while (password<passwordLength) {
     password = generatePassword(Math.floor(Math.random() * generatePassword.length))
   }
+
 
 
   
