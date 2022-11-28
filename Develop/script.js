@@ -59,10 +59,10 @@ function writePassword() {
   var numberCharacter = window.confirm("Do you want to include numbers?");
   var upperCharacter = window.confirm("Do you want to include upper case charaters?");
   var specialCharacter = window.confirm("Do you want to include special case charaters?");
-  var generatePassword = lowerOptions + numberOptions + upperOptions + specialOptions;
+  var generatePassword = lowerCharacter + numberCharacter + upperCharacter + specialCharacter;
   
   while (password<passwordLength) {
-    password = password + generatePassword(Math.floor(Math.random() * generatePassword.length))
+    password = generatePassword(Math.floor(Math.random() * generatePassword.length))
   }
 
 
