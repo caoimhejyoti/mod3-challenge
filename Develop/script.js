@@ -127,14 +127,15 @@ function writePassword() {
   //   }
   //   }
 
-
-
-
   var password = generatePassword;
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
+
+// var variable = writePassword
+
+// variable ();
 
 generateBtn.addEventListener("click", writePassword);
 
