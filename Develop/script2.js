@@ -16,7 +16,7 @@ function writePassword() {
         const upperOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const specialOptions = "`~!@£$%^&*()_-+={[}]|\\\";:',<.>/?*-";
 
-        let result= ("");
+        let result= "";
 
         let passwordLength; 
         
@@ -31,10 +31,6 @@ function writePassword() {
                     break;
                 };
             }
-
-    var numberArry = numberOptions.split('');
-
-    var randomIndex = Math.floor(Math.random() *result.length);
 
         if (window.confirm ("Do you want to use numbers?")){
             result=result+numberOptions;
@@ -51,31 +47,21 @@ function writePassword() {
         if (window.confirm ("Do you want to use special characters?")){
             result=result+specialOptions;
         };
-        
-        console.log("ASD", result);
-
-        return result;
-
-        // FIXME:bug in line 51.
-        
-        while (result==""){
+               
+        if (result==""){
             alert ("You must select a character type");
             generatePassword();
         }    
 
-        result=Math.floor(Math.random() *result.length);
+        let password1="";
 
         for (let i=0; i<passwordLength; i++){
-            i=Math.floor(Math.random() *result.length)
-        
+            password1=password1+result[Math.floor(Math.random() *result.length)];
 
-
-        // FIXME: bug in for on line 59. results in undefined answer.
-        console.log("ASD1", result);
         }  
-        //passwordText.value=result  
+
     
-        return result;
+        return password1;
     }
 
 }
