@@ -70,21 +70,52 @@ function writePassword() {
 
 // TODO: continue will asking questions, and validating - then look at notes from Harry chat. 
 
-
-
   var lowerCharacter = window.confirm("Do you want to include lower case charaters?");
+  
+  lowerCharacter= lowerOptions;
+
   var numberCharacter = window.confirm("Do you want to include numbers?");
+  
+  numberCharacter=numberOptions;
+
   var upperCharacter = window.confirm("Do you want to include upper case charaters?");
+  
+  upperCharacter=upperOptions;
+
   var specialCharacter = window.confirm("Do you want to include special case charaters?");
+  
+  specialCharacter=specialOptions;
+
   var generatePassword = lowerCharacter + numberCharacter + upperCharacter + specialCharacter;
   
-  while (password<passwordLength) {
+  for let i=0; i<passwordLength; i++) {
+
+    
     password = generatePassword(Math.floor(Math.random() * generatePassword.length))
   }
 
 
 
   
+
+
+  var password = generatePassword;
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// var variable = writePassword
+
+// variable ();
+
+generateBtn.addEventListener("click", writePassword);
+
+// n = length of password
+// generatePassword = n*
+
+
+
   // if (lowerCharacter == true && numberCharacter == true && upperCharacter == true && specialCharacter === true){
   // while (generatePassword.length < passwordLength) {
 
@@ -126,18 +157,3 @@ function writePassword() {
   //       specialOptions[Math.floor(Math.random() * specialOptions.length)];
   //   }
   //   }
-
-  var password = generatePassword;
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-// var variable = writePassword
-
-// variable ();
-
-generateBtn.addEventListener("click", writePassword);
-
-// n = length of password
-// generatePassword = n*
