@@ -5,6 +5,8 @@ function writePassword() {
     const password = generatePassword();
     const passwordText = document.querySelector("#password");
 
+
+
     passwordText.value = password;
 
     function generatePassword(){
@@ -30,6 +32,10 @@ function writePassword() {
                 };
             }
 
+    var numberArry = numberOptions.split('');
+
+    var randomIndex = Math.floor(Math.random() *result.length);
+
         if (window.confirm ("Do you want to use numbers?")){
             result=result+numberOptions;
         };
@@ -46,25 +52,31 @@ function writePassword() {
             result=result+specialOptions;
         };
         
-        console.log(result);
+        console.log("ASD", result);
+
+        return result;
 
         // FIXME:bug in line 51.
         
-        while ((result=(""))===true){
+        while (result==""){
             alert ("You must select a character type");
             generatePassword();
         }    
+
         result=Math.floor(Math.random() *result.length);
 
         for (let i=0; i<passwordLength; i++){
-            Math.floor(Math.random() *result.length)
+            i=Math.floor(Math.random() *result.length)
+        
+
 
         // FIXME: bug in for on line 59. results in undefined answer.
-        console.log(result);
-    }    
+        console.log("ASD1", result);
+        }  
+        //passwordText.value=result  
     
-
-}
+        return result;
+    }
 
 }
 generateBtn.addEventListener("click", writePassword)
