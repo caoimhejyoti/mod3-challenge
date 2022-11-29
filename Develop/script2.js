@@ -46,11 +46,17 @@ function writePassword() {
             result=result+specialOptions;
         };
         
+        result=Math.floor(Math.random() *result.length);
+
+        for (let i=0; i<passwordLength; i++){
+            Math.floor(Math.random() *result.length)
+
         
+        console.log(result);
     }    
     
-    console.log(password);
 
-}   
-generateBtn.addEventListener("click", writePassword);
+}
 
+}
+generateBtn.addEventListener("click", writePassword)
