@@ -64,7 +64,7 @@ function writePassword() {
     for (let i=0; i<passwordLength < 8 || passwordLength > 128; i++){
       alert ("Your password must be between 8 - 128 characters")
       return false; 
-      if 
+
       }
 
     // }
