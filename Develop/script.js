@@ -52,45 +52,52 @@ function writePassword() {
   var lowerOptions = "abcdefghijklmnopqrstuvwxyz";
   var upperOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var specialOptions = "`~!@£$%^&*()_-+={[}]|\\\";:',<.>/?*-"
+  var lowerCharacter = window.confirm("Do you want to include lower case charaters?");
+  var numberCharacter = window.confirm("Do you want to include numbers?");
+  var upperCharacter = window.confirm("Do you want to include upper case charaters?");
+  var specialCharacter = window.confirm("Do you want to include special case charaters?");
   
   var passwordLength = window.prompt("How many characters does your password need? It must be between 8 - 128 characters"
   );
   
   function validateLength(){
-    if (passwordLength < 8 || passwordLength > 128) {
-        alert ("Your password must be between 8 - 128 characters")
-        return false; 
-    }
+    for (let i=0; i<passwordLength < 8 || passwordLength > 128; i++){
+      alert ("Your password must be between 8 - 128 characters")
+      return false; 
+      if 
+      }
+
+    // }
+    // if () {
+    // else if (passwordLength > 8 && passwordLength<128){
+    //   generatePassword;
+    // }
   }
 
   validateLength(); 
 
-  var passwordLength = window.prompt("How many characters does your password need? It must be between 8 - 128 characters"
-  );
+  // var passwordLength = window.prompt("How many characters does your password need? It must be between 8 - 128 characters"
+  // );
 
 // TODO: continue will asking questions, and validating - then look at notes from Harry chat. 
 
-  var lowerCharacter = window.confirm("Do you want to include lower case charaters?");
   
   lowerCharacter= lowerOptions;
 
-  var numberCharacter = window.confirm("Do you want to include numbers?");
   
   numberCharacter=numberOptions;
 
-  var upperCharacter = window.confirm("Do you want to include upper case charaters?");
   
   upperCharacter=upperOptions;
 
-  var specialCharacter = window.confirm("Do you want to include special case charaters?");
   
   specialCharacter=specialOptions;
 
   var generatePassword = lowerCharacter + numberCharacter + upperCharacter + specialCharacter;
   
-  for let i=0; i<passwordLength; i++) {
+  for (let i=0; i<passwordLength; i++) {
 
-    
+
     password = generatePassword(Math.floor(Math.random() * generatePassword.length))
   }
 
