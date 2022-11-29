@@ -46,12 +46,20 @@ function writePassword() {
             result=result+specialOptions;
         };
         
+        console.log(result);
+
+        // FIXME:bug in line 51.
+        
+        while ((result=(""))===true){
+            alert ("You must select a character type");
+            generatePassword();
+        }    
         result=Math.floor(Math.random() *result.length);
 
         for (let i=0; i<passwordLength; i++){
             Math.floor(Math.random() *result.length)
 
-        
+        // FIXME: bug in for on line 59. results in undefined answer.
         console.log(result);
     }    
     
