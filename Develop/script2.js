@@ -13,6 +13,9 @@ function writePassword() {
         const lowerOptions = "abcdefghijklmnopqrstuvwxyz";
         const upperOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const specialOptions = "`~!@£$%^&*()_-+={[}]|\\\";:',<.>/?*-";
+
+        let result= ("");
+
         let passwordLength; 
         
             while(true) {
@@ -27,34 +30,27 @@ function writePassword() {
                 };
             }
 
-        if (window.prompt ("Do you want to use numbers?")===true){
-            password=password+numberOptions;
-        }
+        if (window.confirm ("Do you want to use numbers?")){
+            result=result+numberOptions;
+        };
 
-        if (window.prompt ("Do you want to use lower case characters?")===true){
-            password=password+lowerOptions;
-        }      
+        if (window.confirm ("Do you want to use lower case characters?")){
+            result=result+lowerOptions;
+        };
         
-        if (window.prompt ("Do you want to use upper case characters?")===true){
-            password=password+upperOptions;
-        }      
+        if (window.confirm ("Do you want to use upper case characters?")){
+            result=result+upperOptions;
+        };      
 
-        if (window.prompt ("Do you want to use special characters?")===true){
-            password=password+specialOptions;
-        }
-
-
-
+        if (window.confirm ("Do you want to use special characters?")){
+            result=result+specialOptions;
+        };
         
         
-        
-        
+    }    
     
-
-        }    
-    
+    console.log(password);
 
 }   
 generateBtn.addEventListener("click", writePassword);
 
-let = passwordLength;
