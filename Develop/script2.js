@@ -1,31 +1,5 @@
 var generateBtn = document.querySelector("#generate");
 
-function passwordOptions(){
-    if (window.confirm ("Do you want to use numbers?")){
-        result=result+numberOptions;
-    };
-
-    if (window.confirm ("Do you want to use lower case characters?")){
-        result=result+lowerOptions;
-    };
-    
-    if (window.confirm ("Do you want to use upper case characters?")){
-        result=result+upperOptions;
-    };      
-
-    if (window.confirm ("Do you want to use special characters?")){
-        result=result+specialOptions;
-    };
-    
-    // confirm user has selected at least one option
-    if (result==""){
-        alert ("You must select a character type");
-        // if not, repeat - select from where is the best spot for user (options)
-        // return ask: passwordoptions function
-        return(ask.passwordOptions);
-    }
-}
-
 function writePassword() {
     const password = generatePassword();
     const passwordText = document.querySelector("#password");
@@ -58,7 +32,29 @@ function writePassword() {
             }
 
         // ask user what option they want to use.
-        passwordOptions();   
+        if (window.confirm ("Do you want to use numbers?")){
+            result=result+numberOptions;
+        };
+
+        if (window.confirm ("Do you want to use lower case characters?")){
+            result=result+lowerOptions;
+        };
+        
+        if (window.confirm ("Do you want to use upper case characters?")){
+            result=result+upperOptions;
+        };      
+
+        if (window.confirm ("Do you want to use special characters?")){
+            result=result+specialOptions;
+        };
+        
+        // confirm user has selected at least one option
+        if (result==""){
+            alert ("You must select a character type");
+            // if not, repeat - select from where is the best spot for user (options)
+            // return ask: passwordoptions function
+            return generatePassword();
+        }    
 
         let password1="";
 
