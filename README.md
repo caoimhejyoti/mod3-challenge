@@ -40,6 +40,9 @@ It provided me with the space to practice and develop my JavaScript skills.
 
 
 ##Installation
+
+
+##Usage
 This password generator is to be used within a browser. 
 
 1. User selected the 'Generate Password" button to trigger event
@@ -56,13 +59,22 @@ This password generator is to be used within a browser.
 
 ![alert - your password must be at least 8 characters and less than 128 characters](Assets/img/min-max-length.png)
 
+3. Once the appropriate length of characters is entered, you are then asked which options you want to use for your password.
 
+![alter - do you want to use lower characters?](Assets/img/lower-charaters.png)
+![alter - do you want to use numbers?](Assets/img/numbers.png)
+![alter - do you want to use upper characters?](Assets/img/upper-characters.png)
+![alter - do you want to use special characters?](Assets/img/special-character.png)
 
+4. If you have not selected a character type, you will be alerted and the process will start again.
 
+_I would like to develop this step to start from number 3, not the current start, number 2._ 
 
+![alter - you must select character type.](Assets/img/select-character-type.png)
 
-##Usage
+5. Once all of these questioned are answered, your password will pop up on the welcome page in the password container.
 
+![generated password visible on welcome page.](Assets/img/password-result.png)
 
 ##Credits
 https://stackoverflow.com/questions/38620152/pick-a-random-letter-from-string-in-javascript
