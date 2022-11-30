@@ -40,7 +40,7 @@ It provided me with the space to practice and develop my JavaScript skills.
 
 
 ##Installation
-
+https://caoimhejyoti.github.io/mod3-challenge/
 
 ##Usage
 This password generator is to be used within a browser. 
