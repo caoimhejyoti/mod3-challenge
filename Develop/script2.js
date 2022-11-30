@@ -1,16 +1,40 @@
 var generateBtn = document.querySelector("#generate");
 
+function passwordOptions(){
+    if (window.confirm ("Do you want to use numbers?")){
+        result=result+numberOptions;
+    };
+
+    if (window.confirm ("Do you want to use lower case characters?")){
+        result=result+lowerOptions;
+    };
+    
+    if (window.confirm ("Do you want to use upper case characters?")){
+        result=result+upperOptions;
+    };      
+
+    if (window.confirm ("Do you want to use special characters?")){
+        result=result+specialOptions;
+    };
+    
+    // confirm user has selected at least one option
+    if (result==""){
+        alert ("You must select a character type");
+        // if not, repeat - select from where is the best spot for user (options)
+        // return ask: passwordoptions function
+        return(ask.passwordOptions);
+    }
+}
 
 function writePassword() {
     const password = generatePassword();
     const passwordText = document.querySelector("#password");
 
-
-
     passwordText.value = password;
 
     function generatePassword(){
-
+        
+        // character options
         const numberOptions = "0123456789";
         const lowerOptions = "abcdefghijklmnopqrstuvwxyz";
         const upperOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -20,6 +44,7 @@ function writePassword() {
 
         let passwordLength; 
         
+            // ask user 
             while(true) {
                 passwordLength = window.prompt("How long do you want your password? It must be between 8 - 128 characters");
             
@@ -32,37 +57,20 @@ function writePassword() {
                 };
             }
 
-        if (window.confirm ("Do you want to use numbers?")){
-            result=result+numberOptions;
-        };
-
-        if (window.confirm ("Do you want to use lower case characters?")){
-            result=result+lowerOptions;
-        };
-        
-        if (window.confirm ("Do you want to use upper case characters?")){
-            result=result+upperOptions;
-        };      
-
-        if (window.confirm ("Do you want to use special characters?")){
-            result=result+specialOptions;
-        };
-               
-        if (result==""){
-            alert ("You must select a character type");
-            generatePassword();
-        }    
+        // ask user what option they want to use.
+        passwordOptions();   
 
         let password1="";
 
+        // generate password based on input collected.
         for (let i=0; i<passwordLength; i++){
             password1=password1+result[Math.floor(Math.random() *result.length)];
-
         }  
 
-    
+        // display password
         return password1;
     }
 
 }
+// Event listener: triggers write password function on click.
 generateBtn.addEventListener("click", writePassword)
