@@ -1,4 +1,4 @@
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.getElementById("generate");
 
 function writePassword() {
     const password = generatePassword();
