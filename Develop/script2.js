@@ -1,9 +1,9 @@
+// Global variables
 var generateBtn = document.getElementById("generate");
+const passwordText = document.querySelector("#password");
 
 function writePassword() {
     const password = generatePassword();
-    const passwordText = document.querySelector("#password");
-
     passwordText.value = password;
 
     function generatePassword(){
